@@ -2,7 +2,7 @@
   flake.nixosConfigurations.NahalZen = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.NahalZenConfiguration
-      ../../packages/default.nix
+      self.nixosModules.NahalZenPackages
     ];
   };
 }
