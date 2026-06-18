@@ -8,15 +8,25 @@
       wget                          # File downloader
 
       # ── Desktop / GUI ────────────────────────────────────────
-      firefox                       # Web browser
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       vscode                        # IDE / code editor
+
+      # ── Productivity ─────────────────────────────────────────
+      libreoffice                   # Office suite
+      zotero
+      obsidian
+    
+      # ── Communications ────────────────────────────────────────
+      vesktop
+      whatsie
+      thunderbird
 
       # ── Gaming ───────────────────────────────────────────────
       steam
       steam-run
       gamemode                      # GameMode — automatic game optimisations
       mangohud                      # MangoHud — performance overlay (FPS, temps)
-      wineWowPackages.stable        # Wine (stable) for running Windows games
+      wineWow64Packages.waylandFull        # Wine (stable) for running Windows games
       winetricks                    # Wine configuration helper
       lutris                        # Game manager with Wine/Proton support
       protonup-qt                   # Proton GE installer
