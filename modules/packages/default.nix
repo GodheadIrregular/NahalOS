@@ -1,4 +1,4 @@
-{ ... }: {
+{ inputs, ... }: {
   flake.nixosModules.NahalZenPackages = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       # ── System / CLI ─────────────────────────────────────────
