@@ -53,10 +53,6 @@
     variant = "";
   };
   
-  # Enable GNOME DE.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
   # ── Fonts ─────────────────────────────────────────────────
   fonts.packages = with pkgs; [
     noto-fonts                   # Comprehensive font family
@@ -187,12 +183,6 @@
     packages = with pkgs; [
     ];
   };
-
-  # Mango window manager.
-  mango.enable = true;
-
-  # Noctalia compositor.
-  noctalia.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
