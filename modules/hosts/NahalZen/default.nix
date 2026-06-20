@@ -4,6 +4,8 @@
     modules = [
       self.nixosModules.NahalZenConfiguration
       self.nixosModules.NahalZenPackages
+      self.nixosModules.NahalZenMango
+      self.nixosModules.NahalZenNoctalia
     ];
   };
 }

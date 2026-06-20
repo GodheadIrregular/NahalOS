@@ -57,6 +57,28 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # ── Fonts ─────────────────────────────────────────────────
+  fonts.packages = with pkgs; [
+    noto-fonts                   # Comprehensive font family
+    noto-fonts-cjk-sans          # Chinese / Japanese / Korean support
+    noto-fonts-color-emoji       # Noto Color Emoji fallback
+    twitter-color-emoji          # Twitter (Twemoji) emoji pack
+    maple-mono.NF                # Maple Mono Nerd Font — monospace with Nerd Font icons
+    font-awesome                 # Icon font
+    material-design-icons        # Material Design icons
+    liberation_ttf               # Metric-compatible replacements for Arial, Times, etc.
+  ];
+
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      serif = [ "Noto Serif" "Liberation Serif" ];
+      sansSerif = [ "Noto Sans" "Liberation Sans" ];
+      monospace = [ "Maple Mono" "Liberation Mono" ];
+      emoji = [ "Twitter Color Emoji" ];
+    };
+  };
+
   # CUPS printing.
   services.printing.enable = true;
 
@@ -165,6 +187,12 @@
     packages = with pkgs; [
     ];
   };
+
+  # Mango window manager.
+  mango.enable = true;
+
+  # Noctalia compositor.
+  noctalia.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

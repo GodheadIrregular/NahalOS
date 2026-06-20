@@ -1,0 +1,102 @@
+{
+  "general": {
+    "border": {
+      "enable": true,
+      "size": 2,
+      "color": "#ffffff",
+      "active_color": "#5294e2"
+    },
+    "gap": {
+      "inner": 4,
+      "outer": 2
+    },
+    "corner_radius": 8,
+    "smart_corner": false,
+    "no_gaps_when_only": false
+  },
+  "animations": {
+    "enable": true,
+    "speed": 7
+  },
+  "window_rules": [
+    {
+      "class": "steam",
+      "border_color": "#1b2838"
+    },
+    {
+      "class": "libreoffice",
+      "border_color": "#00a500"
+    }
+  ],
+  "autostart": [
+    "systemctl --user import-environment PATH",
+    "dbus-update-activation-environment --systemd --all"
+  ],
+  "input": {
+    "kb_layout": "us",
+    "kb_options": "ctrl:nocaps",
+    "natural_scroll": true,
+    "tap_to_click": true,
+    "tap_button_map": "lrm"
+  },
+  "decoration": {
+    "active_opacity": 1.0,
+    "inactive_opacity": 0.9,
+    "fullscreen_opacity": 1.0,
+    "blur": {
+      "enable": true,
+      "size": 8,
+      "passes": 3,
+      "ignore_opacity": false
+    },
+    "dim_inactive": false,
+    "dim_strength": 0.2,
+    "rounding": 8
+  },
+  "xwayland": {
+    "enable": true
+  },
+  "keybindings": {
+    "mod": "SUPER",
+    "bindings": [
+      { "keys": ["RETURN"], "cmd": "foot", "desc": "Open terminal" },
+      { "keys": ["D"], "cmd": "rofi -show drun", "desc": "Application launcher" },
+      { "keys": ["R"], "cmd": "rofi -show run", "desc": "Run dialog" },
+      { "keys": ["Q"], "cmd": "kill", "desc": "Close focused window" },
+      { "keys": ["F"], "cmd": "fullscreen", "desc": "Toggle fullscreen" },
+      { "keys": ["V"], "cmd": "toggle_floating", "desc": "Toggle floating" },
+
+      { "keys": ["LEFT"], "cmd": "focus left", "desc": "Focus left" },
+      { "keys": ["RIGHT"], "cmd": "focus right", "desc": "Focus right" },
+      { "keys": ["UP"], "cmd": "focus up", "desc": "Focus up" },
+      { "keys": ["DOWN"], "cmd": "focus down", "desc": "Focus down" },
+
+      { "keys": ["SHIFT", "LEFT"], "cmd": "move left", "desc": "Move window left" },
+      { "keys": ["SHIFT", "RIGHT"], "cmd": "move right", "desc": "Move window right" },
+      { "keys": ["SHIFT", "UP"], "cmd": "move up", "desc": "Move window up" },
+      { "keys": ["SHIFT", "DOWN"], "cmd": "move down", "desc": "Move window down" },
+
+      { "keys": ["1"], "cmd": "workspace 1", "desc": "Switch to workspace 1" },
+      { "keys": ["2"], "cmd": "workspace 2", "desc": "Switch to workspace 2" },
+      { "keys": ["3"], "cmd": "workspace 3", "desc": "Switch to workspace 3" },
+      { "keys": ["4"], "cmd": "workspace 4", "desc": "Switch to workspace 4" },
+      { "keys": ["5"], "cmd": "workspace 5", "desc": "Switch to workspace 5" },
+
+      { "keys": ["SHIFT", "1"], "cmd": "movetoworkspace 1", "desc": "Move window to workspace 1" },
+      { "keys": ["SHIFT", "2"], "cmd": "movetoworkspace 2", "desc": "Move window to workspace 2" },
+      { "keys": ["SHIFT", "3"], "cmd": "movetoworkspace 3", "desc": "Move window to workspace 3" },
+      { "keys": ["SHIFT", "4"], "cmd": "movetoworkspace 4", "desc": "Move window to workspace 4" },
+      { "keys": ["SHIFT", "5"], "cmd": "movetoworkspace 5", "desc": "Move window to workspace 5" },
+
+      { "keys": ["H"], "cmd": "split h", "desc": "Horizontal split" },
+      { "keys": ["V"], "cmd": "split v", "desc": "Vertical split" },
+
+      { "keys": ["F5"], "cmd": "exec pactl set-sink-volume @DEFAULT_SINK@ -5%", "desc": "Volume down" },
+      { "keys": ["F6"], "cmd": "exec pactl set-sink-volume @DEFAULT_SINK@ +5%", "desc": "Volume up" },
+      { "keys": ["F7"], "cmd": "exec pactl set-sink-mute @DEFAULT_SINK@ toggle", "desc": "Mute toggle" },
+
+      { "keys": ["PRINT"], "cmd": "exec grim ~/Pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png", "desc": "Screenshot" },
+      { "keys": ["SHIFT", "PRINT"], "cmd": "exec slurp | grim -g - ~/Pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png", "desc": "Screenshot region" }
+    ]
+  }
+}
