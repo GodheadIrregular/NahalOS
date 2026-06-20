@@ -40,11 +40,19 @@
        errands                       # To-do list manager
        gnome-mahjongg                # Mahjongg solitaire game
        emblem                        # Icon editor
+       sherlock-launcher             # Application launcher with search functionality
+       hydrapaper
 
        # ── Gnome Shell Extensions ─────────────────────────────────────────
        gnomeExtensions.user-themes   # Allows using custom themes in Gnome Shell
        gnomeExtensions.tiling-shell  # Adds tiling window management features to Gnome Shell
        gnomeExtensions.appindicator  # Adds support for AppIndicator system tray icons in Gnome Shell
+       gnomeExtensions.blur-my-shell # Adds a blur effect to the Gnome Shell top bar and other UI elements
+
+      # ── Appearance ─────────────────────────────────────────
+      whitesur-gtk-theme         # WhiteSur GTK Theme — a macOS Big Sur-inspired theme for GTK applications, providing a clean and modern look for Linux desktops
+      bibata-cursors             # Bibata Cursor Theme — a modern, stylish cursor theme with various color options and a sleek design
+      whitesur-icon-theme        # WhiteSur Icon Theme — a macOS Big Sur-inspired icon theme for Linux, providing a clean and modern look for applications and system icons
 
 
      ];
@@ -168,4 +176,4 @@
      };
 
   };
- }:
+ }

@@ -13,7 +13,7 @@
       zoxide
       direnv
       fzf                           # Command-line fuzzy finder
-      exa                           # Modern replacement for 'ls'
+      lsd                           # Modern replacement for 'ls'
       bat                           # Syntax highlighting 'cat' clone
       ripgrep                       # Fast recursive search tool
 
