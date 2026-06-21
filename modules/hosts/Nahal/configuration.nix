@@ -95,19 +95,14 @@
   # Enable non-redistributable firmware (required for Intel WiFi/BT).
   hardware.enableRedistributableFirmware = true;
 
-  # Intel GPU / OpenGL / VA-API acceleration.
+  # OpenGL / VA-API acceleration (handled by NVIDIA).
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    extraPackages = with pkgs; [
-      intel-media-driver          # VA-API driver for Intel HD Graphics (Tiger Lake)
-      intel-vaapi-driver          # Legacy VA-API driver
-      libva-vdpau-driver          # VDPAU wrapper for VA-API
-      libvdpau-va-gl              # VDPAU to VA-API bridge
-    ];
   };
 
   # NVIDIA GPU — GIGABYTE G5 MD has an NVIDIA RTX 3050/3050 Ti.
+  # Configured as the primary GPU via NVIDIA Prime sync.
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -116,10 +111,17 @@
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    # Prime sync — NVIDIA handles all rendering, Intel drives the display panel.
+    prime = {
+      sync.enable = true;
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
   };
 
-  # Early KMS (Kernel Mode Setting) for Intel GPU.
-  boot.initrd.kernelModules = [ "i915" ];
+  # Early KMS (Kernel Mode Setting) — NVIDIA handles display via nvidia_drm.
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_drm" ];
 
   # Power management.
   powerManagement = {
@@ -146,21 +148,19 @@
 
   # GIGABYTE G5 MD-specific kernel parameters.
   boot.kernelParams = [
-    "i915.enable_psr=1"             # Panel Self Refresh for power saving
-    "i915.enable_fbc=1"             # Framebuffer compression
-    "i915.enable_dc=2"              # Deep C-states for power saving
-    "i915.fastboot=1"               # Fast boot with Intel GPU
+    "nvidia_drm.fbdev=1"            # NVIDIA framebuffer console
+    "nvidia_drm.modeset=1"          # NVIDIA DRM modesetting
     "pcie_aspm=force"               # Active State Power Management
     "acpi_osi=Linux"                # Better ACPI compatibility
   ];
 
   # Additional kernel modules for GIGABYTE G5 MD hardware.
   boot.kernelModules = [
-    "i915"                          # Intel GPU
     "nvidia"                        # NVIDIA GPU
     "nvidia_drm"                    # NVIDIA DRM (modesetting)
     "nvidia_modeset"                # NVIDIA modeset
     "nvidia_uvm"                    # NVIDIA Unified Memory
+    "i915"                          # Intel GPU (display output only)
     "iwlwifi"                       # Intel WiFi
     "r8169"                         # Realtek RTL8168H Ethernet
     "snd-hda-intel"                 # HD Audio (Tiger Lake-H)

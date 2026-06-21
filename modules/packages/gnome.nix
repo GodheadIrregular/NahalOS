@@ -56,6 +56,15 @@
 
 
      ];
+  #  ── dconf settings ─────────────────
+      programs.dconf.profiles.user.databases = [{
+      settings = {
+        "org/gnome/desktop/interface" = {
+          cursor-theme = "Bibata-Modern-Classic";
+          icon-theme = "Papirus";
+        };
+      };
+    }];
 
    # ── XDG Desktop Portals & MIME defaults ─────────────────
      xdg.portal = {
