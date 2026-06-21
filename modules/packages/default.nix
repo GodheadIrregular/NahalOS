@@ -39,6 +39,8 @@
       zrythm                        # Digital audio workstation
       shortwave                     # Internet radio player
       kdePackages.kdenlive          # Video editor
+      obs-studio                    # Video recording / streaming
+      tenacity                      # Audio editor / recorder (Audacity fork)
 
       # ── Communications ────────────────────────────────────────
       vesktop
@@ -50,7 +52,8 @@
       steam-run
       gamemode                      # GameMode — automatic game optimisations
       mangohud                      # MangoHud — performance overlay (FPS, temps)
-      wineWow64Packages.waylandFull        # Wine (stable) for running Windows games
+      wine-wayland                  # Wine (stable) for running Windows games with Wayland support
+      wineWow64Packages.waylandFull # Wine (stable) for running Windows games
       winetricks                    # Wine configuration helper
       lutris                        # Game manager with Wine/Proton support
       protonup-qt                   # Proton GE installer
