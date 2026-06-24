@@ -60,8 +60,8 @@
       programs.dconf.profiles.user.databases = [{
       settings = {
         "org/gnome/desktop/interface" = {
-          cursor-theme = "Bibata-Modern-Classic";
-          icon-theme = "Papirus";
+          cursor-theme = "Bibata-Modern-Ice";
+          icon-theme = "WhiteSur";
         };
       };
     }];
