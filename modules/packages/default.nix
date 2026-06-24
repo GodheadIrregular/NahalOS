@@ -54,6 +54,7 @@
       winetricks                    # Wine configuration helper
       lutris                        # Game manager with Wine/Proton support
       protonup-qt                   # Proton GE installer
+      prismlauncher                 # Game launcher for Minecraft, supporting multiple versions and modpacks
     ];
 
     # ── Gaming services ──────────────────────────────────────
