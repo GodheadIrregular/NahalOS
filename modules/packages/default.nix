@@ -121,6 +121,7 @@
       steam-run
       gamemode                      # GameMode — automatic game optimisations
       mangohud                      # MangoHud — performance overlay (FPS, temps)
+      glfw                          # OpenGL for Wayland.
       wine-wayland                  # Wine (stable) for running Windows games with Wayland support
       wineWow64Packages.waylandFull # Wine (stable) for running Windows games
       winetricks                    # Wine configuration helper
