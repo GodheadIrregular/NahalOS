@@ -8,8 +8,8 @@
   # Experimental features.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Zen kernel for desktop responsiveness.
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # Latest Xanmod kernel for desktop responsiveness
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   # Bootloader.
    boot.loader = {
@@ -17,6 +17,12 @@
       enable = true;
       device = "nodev";
       efiSupport = true;
+      copyKernels = true;
+      extraConfig = ''
+        search --no-floppy --set=root --file /vmlinuz
+        linux /vmlinuz root=UUID=e9e38657-1d34-4fa8-acbb-a24d4fe816e5 ro quiet
+        initrd /initrd
+      '';
     };
     efi.canTouchEfiVariables = true;
   };
