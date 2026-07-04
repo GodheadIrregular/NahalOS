@@ -97,6 +97,12 @@
   };
 
   # ========== HARDWARE DRIVERS & OPTIMIZATIONS ==========
+  
+  #gnome specific tweaks
+  environment.sessionVariables = {
+    GSK_RENDERER = "gl"; # Prevents protocol errors between GNOME and Nvidia Wayland
+    SDL_VIDEODRIVER = "x11"; # Forces Gamescope to fallback smoothly onto XWayland
+  };
 
   # Enable non-redistributable firmware (required for Intel WiFi/BT).
   hardware.enableRedistributableFirmware = true;

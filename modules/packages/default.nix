@@ -132,10 +132,15 @@
     # ── Gaming services ──────────────────────────────────────
     security.pam.services.steam.enable = true;
     programs.gamemode.enable = true;
+    programs.gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
+      gamescopeSession.enable = true;
       localNetworkGameTransfers.openFirewall = true;
     };
   };
