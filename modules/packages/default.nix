@@ -31,6 +31,9 @@
 
       # ── Graphics / Design ────────────────────────────────────
       blender                       # 3D modeling / rendering
+      libresprite                   # Sprite editor
+      tenacity                       # Audio editor / recorder (Audacity fork)
+      material-maker                   # Material design tool
       gimp                          # Image editor
       inkscape                      # Vector graphics editor
       krita                         # Digital painting
@@ -55,6 +58,16 @@
       lutris                        # Game manager with Wine/Proton support
       protonup-qt                   # Proton GE installer
       prismlauncher                 # Game launcher for Minecraft, supporting multiple versions and modpacks
+
+    # ── Development ───────────────────────────────────────────────
+      godot                        # Godot game engine
+
+      go                            # Go programming language
+      rustc                         # Rust programming language
+      cargo                         # Rust package manager
+      openjdk                       # Java Development Kit
+      maven                         # Java build tool
+      gradle                        # Java build tool
     ];
 
     # ── Gaming services ──────────────────────────────────────
