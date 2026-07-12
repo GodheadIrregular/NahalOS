@@ -61,7 +61,6 @@
 
     # ── Development ───────────────────────────────────────────────
       godot                        # Godot game engine
-
       go                            # Go programming language
       rustc                         # Rust programming language
       cargo                         # Rust package manager
