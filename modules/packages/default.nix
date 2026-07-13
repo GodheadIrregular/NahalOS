@@ -27,13 +27,10 @@
       obsidian
       foliate                       # E-book reader
       papers                        # Document viewer
-     
 
       # ── Graphics / Design ────────────────────────────────────
       blender                       # 3D modeling / rendering
       libresprite                   # Sprite editor
-      tenacity                       # Audio editor / recorder (Audacity fork)
-      material-maker                   # Material design tool
       gimp                          # Image editor
       inkscape                      # Vector graphics editor
       krita                         # Digital painting
@@ -42,6 +39,8 @@
       zrythm                        # Digital audio workstation
       shortwave                     # Internet radio player
       kdePackages.kdenlive          # Video editor
+      obs-studio                    # Video recording / streaming
+      tenacity                      # Audio editor / recorder (Audacity fork)
 
       # ── Communications ────────────────────────────────────────
       vesktop
@@ -53,13 +52,15 @@
       steam-run
       gamemode                      # GameMode — automatic game optimisations
       mangohud                      # MangoHud — performance overlay (FPS, temps)
-      wineWow64Packages.waylandFull        # Wine (stable) for running Windows games
+      glfw                          # OpenGL for Wayland.
+      wine-wayland                  # Wine (stable) for running Windows games with Wayland support
+      wineWow64Packages.waylandFull # Wine (stable) for running Windows games
       winetricks                    # Wine configuration helper
       lutris                        # Game manager with Wine/Proton support
       protonup-qt                   # Proton GE installer
       prismlauncher                 # Game launcher for Minecraft, supporting multiple versions and modpacks
-
-    # ── Development ───────────────────────────────────────────────
+    
+     # ── Development ───────────────────────────────────────────────
       godot                        # Godot game engine
       go                            # Go programming language
       rustc                         # Rust programming language
@@ -68,14 +69,18 @@
       maven                         # Java build tool
       gradle                        # Java build tool
     ];
-
     # ── Gaming services ──────────────────────────────────────
     security.pam.services.steam.enable = true;
     programs.gamemode.enable = true;
+    programs.gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
+      gamescopeSession.enable = true;
       localNetworkGameTransfers.openFirewall = true;
     };
   };
@@ -108,10 +113,10 @@
       obsidian
       foliate                       # E-book reader
       papers                        # Document viewer
-     
 
       # ── Graphics / Design ────────────────────────────────────
       blender                       # 3D modeling / rendering
+      libresprite                   # Sprite editor
       gimp                          # Image editor
       inkscape                      # Vector graphics editor
       krita                         # Digital painting
@@ -139,8 +144,17 @@
       winetricks                    # Wine configuration helper
       lutris                        # Game manager with Wine/Proton support
       protonup-qt                   # Proton GE installer
+      prismlauncher                 # Game launcher for Minecraft, supporting multiple versions and modpacks
+    
+     # ── Development ───────────────────────────────────────────────
+      godot                        # Godot game engine
+      go                            # Go programming language
+      rustc                         # Rust programming language
+      cargo                         # Rust package manager
+      openjdk                       # Java Development Kit
+      maven                         # Java build tool
+      gradle                        # Java build tool
     ];
-
     # ── Gaming services ──────────────────────────────────────
     security.pam.services.steam.enable = true;
     programs.gamemode.enable = true;
