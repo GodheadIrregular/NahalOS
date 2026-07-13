@@ -11,6 +11,9 @@
   # Zen kernel for desktop responsiveness.
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  # This Zen kernel produces vmlinuz instead of bzImage.
+  system.boot.loader.kernelFile = "vmlinuz";
+
   # Bootloader.
    boot.loader = {
     grub = {
