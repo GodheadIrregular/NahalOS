@@ -8,8 +8,8 @@
   # Experimental features.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Latest Xanmod kernel for desktop responsiveness
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  # Latest Zen kernel for desktop responsiveness
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Bootloader.
    boot.loader = {
@@ -18,11 +18,6 @@
       device = "nodev";
       efiSupport = true;
       copyKernels = true;
-      extraConfig = ''
-        search --no-floppy --set=root --file /vmlinuz
-        linux /vmlinuz root=UUID=e9e38657-1d34-4fa8-acbb-a24d4fe816e5 ro quiet
-        initrd /initrd
-      '';
     };
     efi.canTouchEfiVariables = true;
   };
@@ -120,9 +115,9 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
-    open = true;
+    open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;   # Latest beta driver;
+    package = config.boot.kernelPackages.nvidiaPackages.production;   # Latest production driver;
 
     # Prime sync — NVIDIA handles all rendering, Intel drives the display panel.
     prime = {
