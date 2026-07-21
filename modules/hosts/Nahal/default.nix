@@ -5,6 +5,8 @@
       self.nixosModules.NahalConfiguration
       self.nixosModules.NahalPackages
       self.nixosModules.NahalGnome
+      self.nixosModules.NahalPlasma
+      self.nixosModules.NahalSDDM
     ];
   };
 }

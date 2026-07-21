@@ -1,14 +1,13 @@
 {self, pkgs, ... }: {
 
- flake.nixosModules.NahalGnome = { pkgs, lib, ... }: {
- 
+  flake.nixosModules.NahalGnome = { pkgs, lib, ... }: {
+  
     # Enable GNOME DE.
-   services.displayManager.gdm.enable = true;
-   services.desktopManager.gnome.enable = true;
-   
-   services.gnome.core-apps.enable = false;
-   services.gnome.core-developer-tools.enable = false;
-   services.gnome.games.enable = false;
+    services.desktopManager.gnome.enable = true;
+    
+    services.gnome.core-apps.enable = false;
+    services.gnome.core-developer-tools.enable = false;
+    services.gnome.games.enable = false;
 
 
      # ── Gnome Packages ─────────────────────────────────────────

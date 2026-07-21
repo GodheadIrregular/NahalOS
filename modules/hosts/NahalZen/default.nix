@@ -5,6 +5,7 @@
       self.nixosModules.NahalZenConfiguration
       self.nixosModules.NahalZenPackages
       self.nixosModules.NahalGnome
+      self.nixosModules.NahalGDM
     ];
   };
 }
